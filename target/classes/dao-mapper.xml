@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.my">
+
+	<select id="id_login" resultType="Integer">
+		select count(*) from listmember where id=#{id} and password=#{password}
+	
+	</select>
+
+
+  <insert id="insertdo" parameterType="com.my.web.MemberDto">
+  		insert into listmember values (null, #{id}, #{email},#{password}, #{tel}, #{name})
+  </insert>
+  
+  
+</mapper>
